@@ -6,6 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Update the package repositories
 RUN apt-get update
+
 # Install necessary dependencies
 RUN apt-get update && apt-get install -y \
     libpq-dev \
@@ -17,6 +18,12 @@ RUN apt-get update && apt-get install -y \
 # Install Git
 RUN apt-get install -y git
 
+RUN apt-get install -y wget
+RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
+RUN dpkg -i cuda-keyring_1.1-1_all.deb
+RUN apt-get update
+RUN apt-get -y install cuda-toolkit-12-3
+
 # Upgrade pip to the latest version
 RUN pip install --upgrade pip
 
@@ -27,8 +34,8 @@ RUN pip install xformers
 RUN apt-get update && apt-get install ffmpeg libsm6 libxext6 -y
 RUN apt-get update && apt-get install libgl1
 RUN apt install -y python3.10-venv
-RUN apt install -y --no-install-recommends google-perftools
-RUN apt-get install -y wget
+RUN apt install --no-install-recommends google-perftools
+
 # Create a user named 'ubuntu' with specified user and group settings
 RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1001 ubuntu
 
@@ -41,7 +48,7 @@ WORKDIR /home/ubuntu
 COPY . .
 
 # Expose port 7806 (if your application uses this port)
-EXPOSE 7860
+EXPOSE 7806
 
 # Specify the command to run when the container starts
 CMD ["bash", "webui.sh"]
