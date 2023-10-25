@@ -4,6 +4,7 @@
 # change the variables in webui-user.sh instead #
 #################################################
 
+export COMMANDLINE_ARGS=" --xformers --opt-sdp-attention --listen --enable-insecure-extension-access --api --opt-channelslast --port 7860"
 
 use_venv=1
 if [[ $venv_dir == "-" ]]; then
