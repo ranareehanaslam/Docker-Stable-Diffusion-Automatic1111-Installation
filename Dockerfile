@@ -28,7 +28,7 @@ RUN pip install xformers
 RUN apt-get update && apt-get install ffmpeg libsm6 libxext6 -y
 RUN apt-get update && apt-get install libgl1
 RUN apt install -y python3.10-venv
-RUN apt install --no-install-recommends google-perftools
+RUN apt install -y --no-install-recommends google-perftools
 
 # Create a user named 'ubuntu' with specified user and group settings
 RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1001 ubuntu
