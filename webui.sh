@@ -12,7 +12,7 @@ fi
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-
+export COMMANDLINE_ARGS=" --xformers --opt-sdp-attention --listen --enable-insecure-extension-access --api --opt-channelslast --port 7860"
 # If run from macOS, load defaults from webui-macos-env.sh
 if [[ "$OSTYPE" == "darwin"* ]]; then
     if [[ -f "$SCRIPT_DIR"/webui-macos-env.sh ]]
@@ -194,18 +194,18 @@ fi
 
 # Downloading most popular CivitAi Models
 wget -O models/Stable-diffusion/layriel_v16.safetensors https://civitai.com/api/download/models/72396
-wget -O models/Stable-diffusion/majicmixRealistic_betterV2V25.safetensors https://civitai.com/api/download/models/176425
-wget -O models/Stable-diffusion/cyberrealistic_v32.safetensors https://civitai.com/api/download/models/138176
-wget -O models/Stable-diffusion/aZovyaRPGArtistTools_v3.safetensors https://civitai.com/api/download/models/79290
-wget -O models/Stable-diffusion/neverendingDreamNED_v122BakedVae.safetensors https://civitai.com/api/download/models/64094
-wget -O models/Stable-diffusion/ghostmix_v20Bakedvae.safetensors https://civitai.com/api/download/models/76907
-wget -O models/Stable-diffusion/dreamshaper_8.safetensors https://civitai.com/api/download/models/128713
-wget -O models/Stable-diffusion/meinamix_meinaV11.safetensors https://civitai.com/api/download/models/119057
-wget -O models/Stable-diffusion/deliberate_v2.safetensors https://civitai.com/api/download/models/156110
-wget -O models/Stable-diffusion/revAnimated_v122.safetensors https://civitai.com/api/download/models/46846
-wget -O models/Stable-diffusion/epicDiffusion_epicDiffusion11.safetensors https://civitai.com/api/download/models/5677
-wget -O models/Stable-diffusion/epicrealism_pureEvolutionV4.safetensors https://civitai.com/api/download/models/143906
-wget -O models/Stable-diffusion/realisticVisionV51_v51VAE.safetensors https://civitai.com/api/download/models/130072
+# wget -O models/Stable-diffusion/majicmixRealistic_betterV2V25.safetensors https://civitai.com/api/download/models/176425
+# wget -O models/Stable-diffusion/cyberrealistic_v32.safetensors https://civitai.com/api/download/models/138176
+# wget -O models/Stable-diffusion/aZovyaRPGArtistTools_v3.safetensors https://civitai.com/api/download/models/79290
+# wget -O models/Stable-diffusion/neverendingDreamNED_v122BakedVae.safetensors https://civitai.com/api/download/models/64094
+# wget -O models/Stable-diffusion/ghostmix_v20Bakedvae.safetensors https://civitai.com/api/download/models/76907
+# wget -O models/Stable-diffusion/dreamshaper_8.safetensors https://civitai.com/api/download/models/128713
+# wget -O models/Stable-diffusion/meinamix_meinaV11.safetensors https://civitai.com/api/download/models/119057
+# wget -O models/Stable-diffusion/deliberate_v2.safetensors https://civitai.com/api/download/models/156110
+# wget -O models/Stable-diffusion/revAnimated_v122.safetensors https://civitai.com/api/download/models/46846
+# wget -O models/Stable-diffusion/epicDiffusion_epicDiffusion11.safetensors https://civitai.com/api/download/models/5677
+# wget -O models/Stable-diffusion/epicrealism_pureEvolutionV4.safetensors https://civitai.com/api/download/models/143906
+# wget -O models/Stable-diffusion/realisticVisionV51_v51VAE.safetensors https://civitai.com/api/download/models/130072
 
 
 if [[ $use_venv -eq 1 ]] && [[ -z "${VIRTUAL_ENV}" ]];
