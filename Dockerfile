@@ -18,11 +18,17 @@ RUN apt-get update && apt-get install -y \
 # Install Git
 RUN apt-get install -y git
 
+# Install Cuda Toolkit
 RUN apt-get install -y wget
 RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
 RUN dpkg -i cuda-keyring_1.1-1_all.deb
 RUN apt-get update
 RUN apt-get -y install cuda-toolkit-12-3
+
+
+# Install Cuda Drivers
+RUN apt-get install -y cuda-drivers
+
 
 # Upgrade pip to the latest version
 RUN pip install --upgrade pip
