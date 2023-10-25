@@ -44,4 +44,4 @@ COPY . .
 EXPOSE 7860
 
 # Specify the command to run when the container starts
-CMD ["bash", "webui.sh --xformers --opt-sdp-attention --listen --enable-insecure-extension-access --api --opt-channelslast --port 7860"]
+CMD ["bash", "webui.sh"]
