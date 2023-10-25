@@ -41,7 +41,7 @@ WORKDIR /home/ubuntu
 COPY . .
 
 # Expose port 7806 (if your application uses this port)
-EXPOSE 7806
+EXPOSE 7860
 
 # Specify the command to run when the container starts
-CMD ["bash", "webui.sh"]
+CMD ["bash", "webui.sh --xformers --opt-sdp-attention --listen --enable-insecure-extension-access --api --opt-channelslast --port 7860"]
