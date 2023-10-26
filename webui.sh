@@ -194,6 +194,8 @@ else
 fi
 
 # Downloading most popular CivitAi Models  Uncomment to Download them 
+
+
 # wget -O models/Stable-diffusion/layriel_v16.safetensors https://civitai.com/api/download/models/72396
 # wget -O models/Stable-diffusion/majicmixRealistic_betterV2V25.safetensors https://civitai.com/api/download/models/176425
 # wget -O models/Stable-diffusion/cyberrealistic_v32.safetensors https://civitai.com/api/download/models/138176
@@ -210,6 +212,8 @@ fi
 
 # Move the Models from same direcorty models folder to models/Stable-diffusion/ 
 mv models/* models/Stable-diffusion/
+
+
 if [[ $use_venv -eq 1 ]] && [[ -z "${VIRTUAL_ENV}" ]];
 then
     printf "\n%s\n" "${delimiter}"
