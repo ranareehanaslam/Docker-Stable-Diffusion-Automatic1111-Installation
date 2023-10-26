@@ -193,8 +193,8 @@ else
     cd "${clone_dir}"/ || { printf "\e[1m\e[31mERROR: Can't cd to %s/%s/, aborting...\e[0m" "${install_dir}" "${clone_dir}"; exit 1; }
 fi
 
-# Downloading most popular CivitAi Models
-wget -O models/Stable-diffusion/layriel_v16.safetensors https://civitai.com/api/download/models/72396
+# Downloading most popular CivitAi Models  Uncomment to Download them 
+# wget -O models/Stable-diffusion/layriel_v16.safetensors https://civitai.com/api/download/models/72396
 # wget -O models/Stable-diffusion/majicmixRealistic_betterV2V25.safetensors https://civitai.com/api/download/models/176425
 # wget -O models/Stable-diffusion/cyberrealistic_v32.safetensors https://civitai.com/api/download/models/138176
 # wget -O models/Stable-diffusion/aZovyaRPGArtistTools_v3.safetensors https://civitai.com/api/download/models/79290
@@ -208,7 +208,8 @@ wget -O models/Stable-diffusion/layriel_v16.safetensors https://civitai.com/api/
 # wget -O models/Stable-diffusion/epicrealism_pureEvolutionV4.safetensors https://civitai.com/api/download/models/143906
 # wget -O models/Stable-diffusion/realisticVisionV51_v51VAE.safetensors https://civitai.com/api/download/models/130072
 
-
+# Move the Models from same direcorty models folder to models/Stable-diffusion/ 
+mv models/* models/Stable-diffusion/
 if [[ $use_venv -eq 1 ]] && [[ -z "${VIRTUAL_ENV}" ]];
 then
     printf "\n%s\n" "${delimiter}"
