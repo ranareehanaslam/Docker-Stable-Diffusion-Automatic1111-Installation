@@ -1,0 +1,8 @@
+version: "3.9"
+
+services:
+  webui:
+    build: .
+    expose:
+      - "7860"
+    command: ["bash", "webui.sh"]
